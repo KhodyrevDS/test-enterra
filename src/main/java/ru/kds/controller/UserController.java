@@ -94,7 +94,7 @@ public class UserController {
 
         PagedList<User> users = userService.findAll(page, 10);
 
-        model.addAttribute("users", new Pager<User>(users.getList(), users.getTotal(), page, 10));
+        model.addAttribute("users", new Pager<User>(users.getList(), page, 10, users.getTotal()));
 
         return "users/index";
     }
