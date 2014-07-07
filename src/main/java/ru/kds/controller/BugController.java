@@ -62,6 +62,7 @@ public class BugController {
 
     @InitBinder
     protected void initBinder(WebDataBinder binder) throws Exception {
+        binder.setDisallowedFields(new String[]{"created", "modified"});
         binder.registerCustomEditor(User.class, new PropertyEditorSupport(User.class) {
 
             @Override
